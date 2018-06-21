@@ -1,0 +1,712 @@
+<div class="slider">
+    <div class="container">
+        <slick ng-if="dataLoaded"
+               init-onload="false"
+               data="dataLoaded"
+               slides-to-show="1"
+               dots="true"
+               fade="true"
+               arrows="false"
+               autoplay="true">
+            <div ng-repeat="item in items" class="slider__content">
+                <span>
+                    <img ng-src="{{ item.imgSrc }}" alt="{{ item.label}}"/>
+                    <div class="slider__item">
+                        <div class="slider__title-wrap">
+                            <a href="{{item.link}}">
+                                <span class="slider__title">
+                                    {{item.titleFirst | translate}}
+                                </span>
+                                <span class="slider__title-green">
+                                    {{item.titleSecond | translate}}
+                                </span>
+                            </a>
+                        </div>
+                        <div class="slider__text-wrap">
+                            {{item.text | translate}}
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </slick>
+    </div>
+</div>
+<div class="additions">
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li ng-repeat="data in datas">
+                    {{data.underlineText | translate}}
+                </li>
+
+                <!--<li>For Companies</li>-->
+                <!--<li>For Investors</li>-->
+                <!--<li>For Brokers-Dealers</li>-->
+                <!--<li>For Market Data Users</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="banners">
+    <div class="container">
+        <div data-place-width="1140" data-place-height="80" role="banner">
+            <a href="http://ad.kase.kz/click/79">
+                <img src="../images/banner-promo.gif" alt="banner">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="shares">
+                    <div class="quotes-info">
+                        <div class="quotes__header">
+                            <div class="quotes__title">
+                                <a href="">
+                                    {{shares | translate}}
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="quotes__menu">
+                                <a href="" class="quotes__menu-link" ng-click="vm.showShares()" ng-class="{'alpha': vm.index}">
+                                    <img src="../images/menu-border.svg" alt="menu">
+                                    <span class="quotes__lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                                </a>
+                                <div ng-if="vm.indexShares" class="index__modal">
+                                    <div class="index__backdrop" ng-click="vm.closeShares()"></div>
+                                    <div class="index__inner">
+                                        <div class="index__inner-section">
+                                            Choose section:
+                                        </div>
+                                        <div class="index__index-info">
+                                            <fieldset>
+                                                <input type="radio" name="details" id="shares">
+                                                <label for="shares">Shares</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="gs">
+                                                <label for="gs">GS</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="bonds">
+                                                <label for="bonds">Corporate Bonds</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="market">
+                                                <label for="market">Money market</label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quotes__content">
+                            <table class="quotes-info__table quotes-info__table--with-date">
+                                <thead>
+                                <tr>
+                                    <th data-title="shares-down" title="Best performing shares during the trading session">
+                                        <span class="text">Risers</span>
+                                        <a href="#" class="quotes-info__arrow">
+                                            <img src="../images/square-border.svg" alt="square">
+                                            <span></span>
+                                        </a>
+                                    </th>
+                                    <th title="Last deal price per share, in quotation currency">
+                                        Last
+                                    </th>
+                                    <th title="Last deal price to the previous trading session's last deal price, %">
+                                        %△1D
+                                    </th>
+                                    <th title="Change of the last deal price over the last 30 calendar days, %">
+                                        %△1M
+                                    </th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KZTKp/">KZTKp</a>
+                                        <div class="date">
+                                            19.06.18 13:29
+                                        </div>
+                                    </td>
+                                    <td>14 000,00</td>
+                                    <td><span class="green">
+             +2,97
+             </span>
+                                    </td>
+                                    <td><span class="green">
+             +16,67
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline green">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KCEL/">KCEL</a>
+                                        <div class="date">
+                                            19.06.18 15:27
+                                        </div>
+                                    </td>
+                                    <td>1 539,80</td>
+                                    <td><span class="green">
+             +1,97
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -4,24
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/RU_GAZP/">RU_GAZP</a>
+                                        <div class="date">
+                                            19.06.18 15:47
+                                        </div>
+                                    </td>
+                                    <td>720,00</td>
+                                    <td><span class="green">
+             +0,90
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -7,10
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/HSBK/">HSBK</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>102,00</td>
+                                    <td><span class="green">
+             +0,67
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,72
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/ABBN/">ABBN</a>
+                                        <div class="date">
+                                            19.06.18 15:46
+                                        </div>
+                                    </td>
+                                    <td>860,00</td>
+                                    <td><span class="green">
+             +0,50
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,45
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/stock_market/index_kase/">Индекс KASE</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>2 356,08</td>
+                                    <td><span class="red">
+             -0,94
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -6,77
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="money-market">
+                    <div class="quotes-info">
+                        <div class="quotes__header">
+                            <div class="quotes__title">
+                                <a href="">
+                                    {{moneyMarket | translate}}
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="quotes__menu">
+                                <a href="" class="quotes__menu-link" ng-click="vm.showMoney()">
+                                    <img src="../images/menu-border.svg" alt="menu">
+                                    <span class="quotes__lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                                </a>
+                                <div ng-if="vm.indexMoney" class="index__modal">
+                                    <div class="index__backdrop" ng-click="vm.closeMoney()"></div>
+                                    <div class="index__inner">
+                                        <div class="index__inner-section">
+                                            Choose section:
+                                        </div>
+                                        <div class="index__index-info">
+                                            <fieldset>
+                                                <input type="radio" name="details" id="shares">
+                                                <label for="shares">Shares</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="gs">
+                                                <label for="gs">GS</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="bonds">
+                                                <label for="bonds">Corporate Bonds</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="market">
+                                                <label for="market">Money market</label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quotes__content">
+                            <table class="quotes-info__table quotes-info__table--with-date">
+                                <thead>
+                                <tr>
+                                    <th data-title="shares-down" title="Best performing shares during the trading session">
+                                        <span class="text">Risers</span>
+                                        <a href="#" class="quotes-info__arrow">
+                                            <img src="../images/square-border.svg" alt="square">
+                                            <span></span>
+                                        </a>
+                                    </th>
+                                    <th title="Last deal price per share, in quotation currency">
+                                        Last
+                                    </th>
+                                    <th title="Last deal price to the previous trading session's last deal price, %">
+                                        %△1D
+                                    </th>
+                                    <th title="Change of the last deal price over the last 30 calendar days, %">
+                                        %△1M
+                                    </th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KZTKp/">KZTKp</a>
+                                        <div class="date">
+                                            19.06.18 13:29
+                                        </div>
+                                    </td>
+                                    <td>14 000,00</td>
+                                    <td><span class="green">
+             +2,97
+             </span>
+                                    </td>
+                                    <td><span class="green">
+             +16,67
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline green">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KCEL/">KCEL</a>
+                                        <div class="date">
+                                            19.06.18 15:27
+                                        </div>
+                                    </td>
+                                    <td>1 539,80</td>
+                                    <td><span class="green">
+             +1,97
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -4,24
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/RU_GAZP/">RU_GAZP</a>
+                                        <div class="date">
+                                            19.06.18 15:47
+                                        </div>
+                                    </td>
+                                    <td>720,00</td>
+                                    <td><span class="green">
+             +0,90
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -7,10
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/HSBK/">HSBK</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>102,00</td>
+                                    <td><span class="green">
+             +0,67
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,72
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/ABBN/">ABBN</a>
+                                        <div class="date">
+                                            19.06.18 15:46
+                                        </div>
+                                    </td>
+                                    <td>860,00</td>
+                                    <td><span class="green">
+             +0,50
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,45
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/stock_market/index_kase/">Индекс KASE</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>2 356,08</td>
+                                    <td><span class="red">
+             -0,94
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -6,77
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="forex">
+                    <div class="quotes-info">
+                        <div class="quotes__header">
+                            <div class="quotes__title">
+                                <a href="">
+                                    {{forex | translate}}
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                            <div class="quotes__menu">
+                                <a href="" class="quotes__menu-link" ng-click="vm.showForex()">
+                                    <img src="../images/menu-border.svg" alt="menu">
+                                    <span class="quotes__lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                                </a>
+                                <div ng-if="vm.indexForex" class="index__modal">
+                                    <div class="index__backdrop" ng-click="vm.closeForex()"></div>
+                                    <div class="index__inner index_forex">
+                                        <div class="index__inner-section">
+                                            Choose section:
+                                        </div>
+                                        <div class="index__index-info">
+                                            <fieldset>
+                                                <input type="radio" name="details" id="shares">
+                                                <label for="shares">Shares</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="gs">
+                                                <label for="gs">GS</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="bonds">
+                                                <label for="bonds">Corporate Bonds</label>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="radio" name="details" id="market">
+                                                <label for="market">Money market</label>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quotes__content">
+                            <table class="quotes-info__table quotes-info__table--with-date">
+                                <thead>
+                                <tr>
+                                    <th data-title="shares-down" title="Best performing shares during the trading session">
+                                        <span class="text">Risers</span>
+                                        <a href="#" class="quotes-info__arrow">
+                                            <img src="../images/square-border.svg" alt="square">
+                                            <span></span>
+                                        </a>
+                                    </th>
+                                    <th title="Last deal price per share, in quotation currency">
+                                        Last
+                                    </th>
+                                    <th title="Last deal price to the previous trading session's last deal price, %">
+                                        %△1D
+                                    </th>
+                                    <th title="Change of the last deal price over the last 30 calendar days, %">
+                                        %△1M
+                                    </th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KZTKp/">KZTKp</a>
+                                        <div class="date">
+                                            19.06.18 13:29
+                                        </div>
+                                    </td>
+                                    <td>14 000,00</td>
+                                    <td><span class="green">
+             +2,97
+             </span>
+                                    </td>
+                                    <td><span class="green">
+             +16,67
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline green">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/KCEL/">KCEL</a>
+                                        <div class="date">
+                                            19.06.18 15:27
+                                        </div>
+                                    </td>
+                                    <td>1 539,80</td>
+                                    <td><span class="green">
+             +1,97
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -4,24
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/RU_GAZP/">RU_GAZP</a>
+                                        <div class="date">
+                                            19.06.18 15:47
+                                        </div>
+                                    </td>
+                                    <td>720,00</td>
+                                    <td><span class="green">
+             +0,90
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -7,10
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/HSBK/">HSBK</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>102,00</td>
+                                    <td><span class="green">
+             +0,67
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,72
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/shares/show/ABBN/">ABBN</a>
+                                        <div class="date">
+                                            19.06.18 15:46
+                                        </div>
+                                    </td>
+                                    <td>860,00</td>
+                                    <td><span class="green">
+             +0,50
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -2,45
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/en/stock_market/index_kase/">Индекс KASE</a>
+                                        <div class="date">
+                                            19.06.18 16:28
+                                        </div>
+                                    </td>
+                                    <td>2 356,08</td>
+                                    <td><span class="red">
+             -0,94
+             </span>
+                                    </td>
+                                    <td><span class="red">
+             -6,77
+             </span>
+                                    </td>
+                                    <td>
+             <span class="inlinesparkline red">
+                <canvas width="36" height="15"
+                        style="display: inline-block; width: 36px; height: 15px; vertical-align: top;"></canvas>
+             </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

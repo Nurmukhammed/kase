@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kase">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kase</title>
+    <link rel="stylesheet" href="compressed/common.min.css">
+    <link rel="stylesheet" href="style/all.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body ng-class="{'body_home':$root.home, 'body_auth': $root.auth}">
+<header class="header" ng-controller="HeaderCtrl" id="header">
+    <div class="header-wrap">
+        <div class="container container_header">
+            <div class="header-add">
+                <div class="header-cont">
+                    <div class="header__block">
+                        <div class="header__block-left header_align">
+                            <div class="header__menu">
+                                <a href="" class="header__link">
+                                    <img src="./images/menu-border.svg" alt="button">
+                                    <span class="header__menu-lines">
+                                    <span class="header__menu-line"></span>
+                                    <span class="header__menu-line"></span>
+                                    <span class="header__menu-line"></span>
+                                </span>
+                                </a>
+                            </div>
+                            <div class="header__logo">
+                                <div class="header__logo-img">
+                                    <a href="/">
+                                        <img src="images/logo-holy.svg" alt="logo">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="header__title">
+                                <div class="header__text">
+                                    Қазақстан қор биржасы
+                                </div>
+                                <div class="header__text">
+                                    Казахстанская фондовая биржа
+                                </div>
+                                <div class="header__text">
+                                    Kazakhstan Stock Exchange
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="header__block-right header_align">
+                            <div class="header__date">
+                                <div class="header__day">
+                                    Thursday, 21 June 2018 19:25
+                                </div>
+                                <div class="header__tel">
+                                    <a href="tel:+77272375300">
+                                        +7 (727) 237 53 00
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="header__search">
+                                <a href="">
+                                    <img src="images/search-icon.svg" alt="search">
+                                </a>
+                            </div>
+                            <div class="header__lang">
+                                <ul class="header__lang-list">
+                                <ul class="header__lang-list">
+                                    <li class="ru" ng-click="changeLanguage('ru')">
+                                        Рус
+                                    </li>
+                                    <li class="kaz" ng-click="changeLanguage('kaz')">
+                                        Қаз
+                                    </li>
+                                    <li class="eng" ng-click="changeLanguage('en')">
+                                        Eng
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="header__login-wrap" ui-sref="auth">
+                                <div class="header__login-block">
+                                    <div class="header__login">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 253 106.3" enable-background="new 0 0 253 106.3" xml:space="preserve">
+                                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="227.5092" y1="-5.151" x2="25.4908" y2="111.4843">
+                                    <stop offset="0" style="stop-color:#9ED110"></stop>
+                                    <stop offset="1" style="stop-color:#038726"></stop>
+                                    </linearGradient>
+                                    <path fill="none" stroke="url(#SVGID_1_)" stroke-width="3" stroke-miterlimit="10" d="M199.8,104.8H53.2c-28.4,0-51.7-23.2-51.7-51.7v0c0-28.4,23.2-51.7,51.7-51.7h146.7c28.4,0,51.7,23.2,51.7,51.7v0C251.5,81.6,228.3,104.8,199.8,104.8z"></path>
+                                    </svg>
+                                    </div>
+                                    <span class="header__login-text">Login<span class="arrow">→</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section ui-view></section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__nav">
+            <ul>
+                <li>Frequently asked questions</li>
+                <li>Partner websites</li>
+                <li>Old Site</li>
+            </ul>
+        </div>
+        <div class="footer__text">
+            <div class="footer_extra">© 1993-2018 Kazakhstan Stock Exchange JSC</div>
+            <div class="footer_extra">Copying of materials only upon written consent.</div>
+        </div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="style/vendor/slick/slick.css">
+<script type="text/javascript" src="compressed/index.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="js/pages/ctrl.header.js"></script>
+<script type="text/javascript" src="js/pages/ctrl.home.js"></script>
+<script type="text/javascript" src="js/pages/ctrl.auth.js"></script>
+<script>
+    angular.module("kase", ["Header", "State", "Home", "Auth"]);
+</script>
+
+</body>
+</html>

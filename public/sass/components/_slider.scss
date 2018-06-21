@@ -1,0 +1,120 @@
+.slider__content:after {
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  content:""
+}
+.slider {
+  .slick-slider {
+    margin-bottom: inherit;
+  }
+  .slick-dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    line-height: 0;
+    font-size: 57.14286%;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    z-index: 3;
+    li {
+      margin-left: 4px;
+      a {
+        display: block;
+        border: 1px solid #fff;
+        background: 0 0;
+        padding: 0;
+        margin: 0;
+        border-radius: 50%;
+        color: transparent;
+        transition: background .3s;
+      }
+    }
+    li:first-child {
+      margin-left: 0;
+    }
+    li.slick-active a {
+      background: #fff;
+    }
+  }
+}
+.slider__title-green {
+  color: #8ac53f;
+}
+.slider__item {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+}
+.slider__title-wrap {
+  text-transform: uppercase;
+  font-weight: 900;
+
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+.slider__item .slick-dotted {
+  margin-bottom: inherit;
+}
+
+@media (min-width: 769px) {
+  .slider__title-wrap {
+    font-size: 257.14286%;
+  }
+}
+
+@media (min-width: 992px) {
+  .slider__item {
+    display: block;
+    height: auto;
+    padding-right: 184px;
+    text-align: right;
+    top: auto;
+    right: 0;
+    bottom: 210px;
+  }
+  .slider {
+    .slick-dots {
+      width: auto;
+      text-align: right;
+      right: 184px;
+      bottom: 182px;
+      left: auto;
+      a {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+
+}

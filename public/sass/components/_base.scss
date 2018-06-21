@@ -1,0 +1,40 @@
+body {
+  font: normal 14px/1.357 MuseoSansCyrl, Arial, sans-serif;
+  color: #45464f;
+  width: 100%;
+}
+.body_home {
+  background-color:#f8fafb;
+}
+
+.body_auth {
+  .header-wrap {
+    position: relative;
+  }
+}
+
+a {
+  transition: all .3s;
+  color: #fff;
+}
+
+.arrow {
+  margin-left: 5px;
+  display: inline-block;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+}
+
+.header__login-block:hover .arrow {
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+.info {
+  margin-bottom: 47px;
+}
+
+
+

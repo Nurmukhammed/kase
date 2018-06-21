@@ -1,0 +1,37 @@
+.auth__title {
+  margin-top: 50px;
+  h1 {
+    margin: 0;
+    color: #169d1b;
+    font-size: 31px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+}
+.auth__login {
+  margin-bottom: 50px;
+  padding: 50px!important;
+  background-color: #f8faf9;
+  background: linear-gradient(155deg,#f2f6fa 0,#e6e8e8 100%);
+  border-radius: 20px;
+  position: relative;
+  -webkit-box-shadow: 0px -1px 8px 0px rgba(67,68,77,0.2);
+  -moz-box-shadow: 0px -1px 8px 0px rgba(67,68,77,0.2);
+  box-shadow: 0px -1px 8px 0px rgba(67,68,77,0.2);
+  margin-top: 30px !important;
+  &:before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/glints.png) 50% 50%;
+    background-size: cover;
+    content: "";
+  }
+}
+.register {
+  margin-top: 10px;
+  color: #169d1b;
+}
