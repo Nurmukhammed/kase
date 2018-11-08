@@ -34,4 +34,10 @@ function routeConfig($stateProvider, $locationProvider, $urlRouterProvider) {
             controller: "AuthCtrl",
             controllerAs: 'vm'
         })
+        .state('events', {
+            url: "/events",
+            templateUrl: "views/events.html",
+            controller: "EventsCtrl",
+            controllerAs: 'vm'
+        })
 };
